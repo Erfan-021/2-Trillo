@@ -1,0 +1,281 @@
+/////////////////////////////////////////
+// LOGO
+.logo {
+  height: 3.2rem;
+  margin-left: 2rem;
+}
+
+/////////////////////////////////////////
+// SEARCH
+.search {
+  flex: 0 0 40%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__input {
+    font-family: inherit;
+    color: inherit;
+    font-size: inherit;
+    width: 90%;
+    border: none;
+    border-radius: 100px;
+    padding: 0.7rem 2rem;
+    margin-right: -3.5rem;
+    background-color: var(--color-grey-light-3);
+    transition: all 0.3s;
+
+    &:focus {
+      outline: none;
+      width: 100%;
+    }
+
+    &::-webkit-input-placeholder {
+      font-weight: 100;
+      color: var(--color-grey-dark-3);
+    }
+  }
+
+  &__input:focus + &__btn {
+    background-color: var(--color-grey-light-3);
+  }
+
+  &__btn {
+    border: none;
+    background-color: var(--color-grey-light-2);
+    color: #aaa;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:active {
+      transform: translateY(2px);
+    }
+  }
+
+  &__icon {
+    height: 2rem;
+    width: 2rem;
+    fill: var(--color-grey-dark-3);
+  }
+}
+
+/////////////////////////////////////////
+// USER NAVIGATION
+.user-nav {
+  align-self: stretch;
+
+  display: flex;
+  align-items: center;
+
+  // in be in manas ke kol direct child elemt haro select mikone
+  & > * {
+    padding: 0 2rem;
+    cursor: pointer;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  & > *:hover {
+    background-color: var(--color-grey-light-4);
+  }
+
+  &__icon-box {
+    position: relative;
+  }
+
+  &__icon {
+    height: 2.25rem;
+    width: 2.25rem;
+    fill: var(--color-grey-dark-2);
+  }
+
+  &__notif {
+    font-size: 0.8rem;
+    height: 1.75rem;
+    width: 1.75rem;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    color: #fff;
+    position: absolute;
+    top: 1.25rem;
+    right: 1.2rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__user-photo {
+    height: 3.75rem;
+    border-radius: 50%;
+    margin-right: 1rem;
+  }
+}
+
+/////////////////////////////////////////
+// SIDE NAVIGATION
+.side-nav {
+  font-size: 1.5rem;
+  list-style: none;
+  margin-top: 3rem;
+  &__item {
+    position: relative;
+
+    &:not(:last-child) {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  &__item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 3px;
+    background-color: var(--color-primary);
+    transform: scaleY(0);
+    transition: transform 0.2s, width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s, background-color 0.1s;
+  }
+
+  &__item:hover::before,
+  &__item--active::before {
+    transform: scaleY(1);
+    width: 100%;
+  }
+
+  &__item:active::before {
+    background-color: var(--color-primary-light);
+  }
+
+  &__link:link,
+  &__link:visited {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 300;
+    color: var(--color-grey-light-1);
+    display: inline-block;
+    padding: 1.5rem 3rem;
+
+    // z-index zamani kar mikone ke ye position vasash tain shode bashe on element
+    position: relative;
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+  }
+
+  &__icon {
+    height: 2.5rem;
+    width: 2.5rem;
+    fill: currentColor;
+    margin-right: 2rem;
+  }
+}
+
+/////////////////////////////////////////
+// Copyright TEXT
+.copyright {
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 2.5rem;
+}
+
+/////////////////////////////////////////
+// HOTEL GALLERY
+.gallery {
+  display: flex;
+
+  &__photo {
+    width: 100%;
+    display: block;
+  }
+}
+
+/////////////////////////////////////////
+// HOTEL OVERVIEW
+.overview {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--color-grey-light-3);
+
+  &__heading {
+    padding: 1.5rem 3rem;
+    font-size: 2.2rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  &__stars {
+    // har moghe dar flex khastim ke y fazaye ziadio fasele bedim bedone in ke az flex grow va space bettwen estefade konim az margin auto estefade mikonim
+    margin-right: auto;
+    // baraye in ke on white space va inke daqiqan center beshan dakhel elemet fqt display ro flex mikonim
+    display: flex;
+  }
+
+  &__icon-star,
+  &__icon-location {
+    width: 1.75rem;
+    height: 1.75rem;
+    fill: var(--color-primary);
+  }
+
+  &__location {
+    display: flex;
+    align-items: center;
+  }
+
+  &__icon-location {
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  &__rating {
+    align-self: stretch;
+    background-color: var(--color-primary);
+    margin-left: 3rem;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 2.25rem;
+  }
+
+  &__rating-average {
+    font-size: 2.25rem;
+    font-weight: 300;
+    margin-bottom: -3px;
+  }
+
+  &__rating-count {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+  }
+}
+
+/////////////////////////////////////////
+// BUTTON INLINE
+.btn-inline {
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+  font-size: inherit;
+  color: var(--color-primary);
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+  background-color: transparent;
+
+  &:hover {
+    color: var(--color-grey-dark-1);
+  }
+
+  &:focus {
+    outline: none;
+    animation: pulsate 1s infinite;
+  }
+}
