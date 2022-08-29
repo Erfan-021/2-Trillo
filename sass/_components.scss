@@ -270,12 +270,219 @@
   padding-bottom: 2px;
   background-color: transparent;
 
+  & span {
+    margin-left: 3px;
+    transition: all 0.3s;
+  }
+
   &:hover {
     color: var(--color-grey-dark-1);
+
+    & span {
+      margin-left: 8px;
+    }
   }
 
   &:focus {
     outline: none;
     animation: pulsate 1s infinite;
   }
+}
+
+/////////////////////////////////////////
+// HOTEL DETAIL DESCRIPTION
+.description {
+  font-size: 1.4rem;
+  background-color: #fff;
+  flex: 0 0 60%;
+  margin-right: 4.5rem;
+  padding: 3rem;
+  box-shadow: var(--shadow-light);
+}
+
+.paragraph:not(:last-of-type) {
+  margin-bottom: 2rem;
+}
+
+.list {
+  font-size: 1.5rem;
+  list-style: none;
+  display: flex;
+  margin: 3rem 0;
+  padding: 3rem 0;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  flex-wrap: wrap;
+
+  &__item {
+    flex: 0 0 50%;
+    margin-bottom: 0.7rem;
+    display: flex;
+    align-items: center;
+  }
+
+  &__icon {
+    color: var(--color-primary-light);
+  }
+}
+
+.recommend {
+  display: flex;
+  align-items: center;
+  &__count {
+    color: var(--color-grey-dark-3);
+    margin-right: auto;
+  }
+
+  &__friends {
+    display: flex;
+  }
+
+  &__photo {
+    box-sizing: content-box;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    border: 3px solid #fff;
+
+    &:not(:last-child) {
+      margin-right: -1.7rem;
+    }
+  }
+}
+
+/////////////////////////////////////////
+// HOTEL DETAIL USER REVIEW
+.user-review {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  flex: 1;
+}
+
+.review {
+  position: relative;
+  background-color: #fff;
+  padding: 3rem;
+  margin-bottom: 3.5rem;
+  box-shadow: var(--shadow-light);
+
+  &__text {
+    margin-bottom: 2rem;
+  }
+
+  &__user {
+    display: flex;
+    align-items: center;
+  }
+
+  &__photo {
+    height: 4.5rem;
+    border-radius: 100px;
+    margin-right: 1.5rem;
+  }
+
+  &__user-box {
+    margin-right: auto;
+  }
+
+  &__user-name {
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+
+  &__user-date {
+    color: var(--color-grey-dark-3);
+  }
+
+  &__rating {
+    color: var(--color-primary);
+    font-size: 2.2rem;
+    font-weight: 300;
+  }
+
+  &::before {
+    content: "\201C";
+    position: absolute;
+    top: -5rem;
+    left: -3rem;
+    line-height: 1;
+    font-size: 20rem;
+    color: #ddd;
+    font-family: sans-serif;
+  }
+}
+
+/////////////////////////////////////////
+// HOTEL DETAIL CTA
+.cta {
+  padding: 3.5rem 0;
+  text-align: center;
+
+  &__heading {
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: 300;
+    margin-bottom: 2.5rem;
+  }
+}
+
+/////////////////////////////////////////
+// CTA BUTTON
+.btn {
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 100px;
+  background-image: linear-gradient(to right, var(--color-primary-light), var(--color-primary-dark));
+  color: #fff;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-dark);
+  transition: all 0.2s;
+
+  & > * {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    transition: all 0.2s;
+  }
+
+  &__visible {
+    padding: 2rem 7.5rem;
+  }
+
+  &__invisible {
+    display: inline-block;
+    padding: 2rem 0;
+    position: absolute;
+    top: -100%;
+    left: 0;
+  }
+
+  &:hover {
+    background-image: linear-gradient(to left, var(--color-primary-light), var(--color-primary-dark));
+  }
+
+  &:hover &__visible {
+    transform: translateY(100%);
+  }
+
+  &:hover &__invisible {
+    top: 0;
+  }
+
+  &:active {
+    transform: translateY(3px);
+    box-shadow: 0 1.5rem 2rem rgba(0, 0, 0, 0.3);
+  }
+
+  // &:focus {
+  //   animation: pulsate 1s infinite;
+  // }
 }
