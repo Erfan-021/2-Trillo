@@ -16,6 +16,13 @@
   --shadow-light: 0 2rem 4rem rgba(0, 0, 0, 0.07);
 }
 
+$bp-largest: 75em; //1200px
+$bp-large: 68.75em; //1100px
+$bp-med: 56.25em; //900px
+$bp-med-2: 43.75em; //700px
+$bp-small: 37.5em; //600px
+$bp-small-2: 31.25em; //500px
+
 @keyframes pulsate {
   0% {
     transform: scale(1);
@@ -49,6 +56,10 @@ html {
   /* 10px / 16px = 0.625 = 62.5% */
   font-size: 62.5%;
   box-sizing: border-box;
+
+  @media screen and (max-width: $bp-large) {
+    font-size: 50%;
+  }
 }
 
 body {

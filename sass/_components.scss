@@ -13,6 +13,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media screen and (max-width: $bp-small-2) {
+    order: 1;
+    flex: 0 0 100%;
+  }
   &__input {
     font-family: inherit;
     color: inherit;
@@ -69,6 +74,10 @@
   display: flex;
   align-items: center;
 
+  @media screen and (max-width: $bp-small-2) {
+    margin-top: 2rem;
+  }
+
   // in be in manas ke kol direct child elemt haro select mikone
   & > * {
     padding: 0 2rem;
@@ -121,11 +130,26 @@
   font-size: 1.5rem;
   list-style: none;
   margin-top: 3rem;
+
+  @media screen and (max-width: $bp-med) {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+  }
+
   &__item {
     position: relative;
 
+    @media screen and (max-width: $bp-med) {
+      flex: 1;
+    }
+
     &:not(:last-child) {
       margin-bottom: 0.5rem;
+
+      @media screen and (max-width: $bp-med) {
+        margin: 0;
+      }
     }
   }
 
@@ -166,6 +190,16 @@
 
     display: flex;
     align-items: center;
+
+    @media screen and (max-width: $bp-med) {
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    @media screen and (max-width: $bp-small) {
+      flex-direction: column;
+      padding: 1.5rem 0.5rem;
+    }
   }
 
   &__icon {
@@ -173,6 +207,13 @@
     width: 2.5rem;
     fill: currentColor;
     margin-right: 2rem;
+
+    @media screen and (max-width: $bp-small) {
+      margin: 0;
+      margin-bottom: 0.7rem;
+      width: 2rem;
+      height: 2rem;
+    }
   }
 }
 
@@ -182,6 +223,10 @@
   font-size: 1.2rem;
   text-align: center;
   padding: 2.5rem;
+
+  @media screen and (max-width: $bp-med) {
+    display: none;
+  }
 }
 
 /////////////////////////////////////////
@@ -208,6 +253,11 @@
     font-weight: 300;
     text-transform: uppercase;
     letter-spacing: 1px;
+
+    @media screen and (max-width: $bp-small) {
+      font-size: 1.8rem;
+      padding: 1.2rem 2rem;
+    }
   }
 
   &__stars {
@@ -244,17 +294,29 @@
     align-items: center;
     justify-content: center;
     padding: 0 2.25rem;
+
+    @media screen and (max-width: $bp-small) {
+      padding: 0 1.5rem;
+    }
   }
 
   &__rating-average {
     font-size: 2.25rem;
     font-weight: 300;
     margin-bottom: -3px;
+
+    @media screen and (max-width: $bp-small) {
+      font-size: 1.8rem;
+    }
   }
 
   &__rating-count {
     font-size: 0.8rem;
     text-transform: uppercase;
+
+    @media screen and (max-width: $bp-small) {
+      font-size: 0.5rem;
+    }
   }
 }
 
@@ -298,6 +360,16 @@
   margin-right: 4.5rem;
   padding: 3rem;
   box-shadow: var(--shadow-light);
+
+  @media screen and (max-width: $bp-med) {
+    padding: 2;
+    margin-right: 3rem;
+  }
+
+  @media screen and (max-width: $bp-small) {
+    margin-bottom: 3rem;
+    margin-right: 0;
+  }
 }
 
 .paragraph:not(:last-of-type) {
@@ -313,6 +385,10 @@
   border-top: 1px solid #eee;
   border-bottom: 1px solid #eee;
   flex-wrap: wrap;
+
+  @media screen and (max-width: $bp-med-2) {
+    flex-direction: column;
+  }
 
   &__item {
     flex: 0 0 50%;
@@ -346,7 +422,7 @@
     border: 3px solid #fff;
 
     &:not(:last-child) {
-      margin-right: -1.7rem;
+      margin-right: -2rem;
     }
   }
 }
@@ -367,6 +443,11 @@
   padding: 3rem;
   margin-bottom: 3.5rem;
   box-shadow: var(--shadow-light);
+
+  @media screen and (max-width: $bp-med) {
+    padding: 2rem;
+    margin-bottom: 3rem;
+  }
 
   &__text {
     margin-bottom: 2rem;
@@ -422,6 +503,10 @@
   padding: 3.5rem 0;
   text-align: center;
 
+  @media screen and (max-width: $bp-med) {
+    padding: 2.5rem 0;
+  }
+
   &__heading {
     font-size: 2rem;
     text-transform: uppercase;
@@ -458,7 +543,6 @@
   }
 
   &__invisible {
-    display: inline-block;
     padding: 2rem 0;
     position: absolute;
     top: -100%;
